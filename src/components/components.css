@@ -1,0 +1,613 @@
+/* 
+ * Navigation Category Container Styles
+ * Used for the category icons and labels in the horizontal scrolling navigation
+ */
+ .nav-catagory-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Typography for category labels */
+.nav-catagory-container small {
+    font-family: Averta, sans-serif;
+    font-weight: 500;
+    color: rgb(34, 34, 34);
+    font-size: 13px;
+    outline-color: rgb(34, 34, 34);
+}
+
+/* 
+ * Brand Container Styles 
+ * Used for brand logos in the featured brands section
+ */
+.brand-container img {
+    border-radius: 100%; /* Creates circular brand logos */
+    box-shadow: 1px 1px 4px 1px rgb(198, 198, 198); /* Subtle shadow for depth */
+}
+
+/* 
+ * Category Card Styles
+ * Used for the large category cards with images and text overlays
+ */
+.category-card img {
+    height: 310px;
+    width: 290px;
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+.category-card {
+    position: relative; /* Needed for absolute positioning of overlay */
+    margin: 0.2rem 0.7rem;
+}
+
+/* Typography for category descriptions */
+.category-card p {
+    font-family: Averta, sans-serif;
+    font-weight: 400;
+}
+
+/* Typography for category titles */
+.category-card h5 {
+    font-family: Averta, sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* 
+ * Category Card Overlay
+ * Creates a text overlay for category information
+ */
+.category-card-overlay {
+    position: absolute;
+    top: 17px;
+    left: 15px;
+    /* Smooth transition for hover effects */
+    transition: background-color 0.4s ease-in-out, top 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+/* 
+ * Hover effect for category cards
+ * Creates a white semi-transparent overlay on hover
+ */
+.category-card:hover .category-card-overlay {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 99%;
+    width: 99%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+/* 
+ * Horizontal scrolling container for category cards (first row)
+ */
+.category-card-container1 {
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Enables horizontal scrolling */
+}
+
+/* Hide scrollbar but keep functionality (for Webkit browsers) */
+.category-card-container1::-webkit-scrollbar {
+    width: 0;
+}
+
+/* 
+ * Horizontal scrolling container for category cards (second row)
+ */
+.category-card-container2 {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+/* Hide scrollbar but keep functionality (for Webkit browsers) */
+.category-card-container2::-webkit-scrollbar {
+    width: 0;
+}
+
+/* 
+ * ======================
+ * NAVBAR STYLES
+ * ======================
+ */
+
+/* 
+ * Search Container Styles
+ * Styles for the search input in the navbar
+ */
+.search-container {
+    background-color: white;
+    width: 23em;
+    height: 2.3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px; /* Fully rounded edges for modern look */
+}
+
+/* Remove default input styles and make transparent */
+.search-container input {
+    border: none;
+    outline: none;
+    width: 85%;
+    background-color: transparent;
+}
+
+/* 
+ * Navbar Container
+ * Main styles for the navigation bar at the top of the page
+ */
+.navbar-container {
+    position: sticky; /* Keeps navbar at top when scrolling */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* Ensures navbar is above most content */
+    background-color: rgb(37, 43, 96); /* Dark blue background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3.6em;
+    margin-bottom: 17px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0 10px;
+    overflow: visible; /* CRITICAL: Allows dropdowns to extend outside navbar */
+    color: white;
+}
+
+/* Typography for navbar text elements */
+.navbar-container p {
+    font-family: Averta, sans-serif;
+    font-weight: 600;
+}
+
+/* 
+ * Left side of navbar containing logo and search
+ */
+.left-side-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 47vw;
+    margin-right: 10px;
+}
+
+/* 
+ * Right side of navbar containing navigation links and cart
+ */
+.right-side-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+}
+
+/* Position relative needed for the hover underline effect */
+.right-side-nav p {
+    position: relative;
+}
+
+/* Add pointer cursor to all right-side nav elements */
+.right-side-nav >:hover {
+    cursor: pointer;
+}
+
+/* 
+ * Underline animation effect for navbar links on hover
+ * Creates a white line that appears below text on hover
+ */
+.right-side-nav p:hover::after {
+    content: " ";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+}
+
+/* Spacing between navbar items on right side */
+.right-side-nav>* {
+    margin: 21px;
+}
+
+/* 
+ * Section Title Component
+ * Used for "Featured Products", "Top Brands", etc.
+ */
+.title-component p {
+    margin: 1em 5vw 3px 5vw;
+    font-family: Averta, sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* 
+ * ======================
+ * PRODUCT ITEM CARD STYLES
+ * ======================
+ */
+
+/* 
+ * Container for individual product cards
+ */
+.item-card-parent-container {
+    height: 11em;
+    width: 9.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 7px 10px 1rem 10px;
+    border-radius: 3px;
+}
+
+/* 
+ * Product image styling with neumorphic shadow effect
+ */
+.item-card-image img {
+    width: 7.5em;
+    height: 7.5em;
+    /* Unique border radius for distinctive look */
+    border-top-left-radius: 1px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 1px;
+    /* Neumorphic shadow effect */
+    box-shadow: 5px 5px 10px #cbced1, -5px -5px 10px #fff;
+}
+
+/* 
+ * Product description text styling
+ */
+.item-description p {
+    font-family: Averta, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    overflow-x: hidden; /* Prevent text overflow */
+    margin: 3px;
+}
+
+.item-description {
+    margin: 4px 10px;
+}
+
+/* Product price styling */
+.item-description h6 {
+    font-family: Averta, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 3px;
+}
+
+/* 
+ * Button Container Styles
+ * Used for CTA buttons throughout the site
+ */
+.button-container {
+    background-color: rgb(78, 114, 213); /* Blue button color */
+    height: 2.5rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 10px;
+    /* Neumorphic shadow effect */
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+
+.button-container:hover {
+    cursor: pointer;
+}
+
+/* Button text styling */
+.button-container button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* 
+ * ======================
+ * LOCATION DROPDOWN STYLES
+ * ======================
+ */
+
+/* 
+ * Location Selector Container
+ * Parent element that holds the location text and dropdown
+ */
+.location-selector {
+    position: relative; /* Required for absolute positioning of dropdown */
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s; /* Smooth hover effect */
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Higher z-index to ensure dropdown appears above other elements */
+}
+
+/* 
+ * Hover effect for location selector
+ * Adds subtle highlight when hovering over location
+ */
+.location-selector:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+}
+
+/* Location text styling */
+.location-selector p {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between location icon and text */
+    margin: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* 
+ * Location Dropdown Menu
+ * The container that appears when clicking location selector
+ */
+.location-dropdown {
+    position: absolute;
+    top: calc(100% + 5px); /* Position below selector with small gap */
+    left: 0;
+    width: 250px; /* Fixed width for consistent appearance */
+    max-height: 350px; /* Maximum height before scrolling */
+    overflow-y: auto; /* Enable vertical scrolling for many locations */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    z-index: 9999; /* Very high z-index to ensure it's above everything */
+    padding: 12px 0;
+    border: 1px solid #eaeaea;
+    color: #333; /* Dark text color for contrast on white */
+    text-align: left;
+}
+
+/* 
+ * Country Section in Location Dropdown
+ * Groups locations by country
+ */
+.country-section {
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+/* Country heading styling */
+.country-section h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee; /* Subtle separator line */
+    font-weight: 600;
+}
+
+/* 
+ * Individual location option styling
+ */
+.location-option {
+    padding: 8px 10px;
+    margin: 3px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s; /* Smooth hover transition */
+    font-size: 14px;
+}
+
+/* 
+ * Hover effect for location options
+ * Highlights the location being hovered
+ */
+.location-option:hover {
+    background-color: #f0f7ff; /* Light blue background */
+    color: rgb(78, 114, 213); /* Match button blue color */
+}
+
+/* 
+ * Custom scrollbar styling for the location dropdown
+ * Makes scrollbar more attractive and consistent with design
+ */
+.location-dropdown::-webkit-scrollbar {
+    width: 6px; /* Narrow width for subtle appearance */
+}
+
+.location-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.location-dropdown::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.location-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1; /* Darker on hover */
+}
+
+/* 
+ * ======================
+ * FOOTER STYLES
+ * ======================
+ */
+.footer {
+    background-color: rgb(37, 43, 96); /* Match navbar color */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 5em;
+    height: 14em;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(37, 43, 96);
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin: 10px 3em;
+    text-align: left;
+}
+
+.footer-column h4 {
+    font-size: 1em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #f39c12;
+}
+
+/* 
+ * ======================
+ * TOAST NOTIFICATION STYLES
+ * ======================
+ */
+.toast-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid green;
+    height: 40px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 2px 2px rgb(209, 209, 209);
+}
+
+.toast-container span {
+    padding: 0 10px;
+}
+
+/* 
+ * Animated timer bar for toast notifications
+ * Creates a green line that shrinks to indicate time remaining
+ */
+.toast-container::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: green;
+    animation: slideOut 5s linear forwards; /* 5-second animation */
+}
+
+/* Animation to shrink the timer bar to zero */
+@keyframes slideOut {
+    100% {
+        width: 0;
+    }
+}
+
+/* 
+ * ======================
+ * RESPONSIVE STYLES
+ * ======================
+ */
+@media only screen and (max-width:950px) {
+    /* Adjust navbar for smaller screens */
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        flex-wrap: wrap; /* Allow items to wrap to new rows */
+        margin-bottom: 17px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 5px;
+    }
+
+    /* Stack left-side elements vertically on mobile */
+    .left-side-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        width: 70vw;
+    }
+
+    /* Full-width search on mobile */
+    .search-container {
+        width: 60vw;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        border-radius: 20px;
+        border: 1px solid black;
+    }
+
+    /* Hide navigation text links on mobile */
+    .right-side-nav p {
+        display: none;
+    }
+
+    /* Smaller product cards on mobile */
+    .item-card-parent-container {
+        height: 11em;
+        width: 8em;
+        margin: 8px 5px;
+    }
+    
+    /* 
+     * Responsive fixes for location dropdown on mobile
+     * Changes location selector positioning and dropdown layout
+     */
+    .location-selector {
+        position: static; /* Reset positioning for mobile */
+        margin: 10px 0;
+    }
+    
+    /* Center dropdown on mobile screens */
+    .location-dropdown {
+        position: fixed; /* Fixed positioning on mobile */
+        top: auto; /* Let it position naturally */
+        left: 50%;
+        transform: translateX(-50%); /* Center horizontally */
+        width: 90%;
+        max-width: 300px;
+        max-height: 60vh; /* Use viewport height for better sizing */
+    }
+}

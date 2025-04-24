@@ -1,0 +1,257 @@
+/* Base Styles */
+body {
+    font-family: Averta, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Global Link Styles */
+body a {
+    color: black;
+    text-decoration: none;
+    font-family: Averta, sans-serif;
+    font-size: 16px;
+}
+
+/* Category Icons Container */
+.category-icons-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 16px 8px;
+    gap: 16px;
+    background-color: #fff;
+    margin-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-icons-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Category Icon Item */
+.category-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.category-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.category-icon .material-icons {
+    font-size: 24px;
+    color: #333;
+}
+
+.category-name {
+    font-size: 12px;
+    text-align: center;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Section Styling */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    margin: 20px 0 10px 0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.see-all-link {
+    color: #4a6fa5;
+    font-size: 14px;
+}
+
+/* Category Section */
+.category-section {
+    margin-bottom: 24px;
+}
+
+/* Vertical Items Grid (Popular in the Area) */
+.vertical-items-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+}
+
+/* Vertical Item Card */
+.vertical-item-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-item-card .item-image {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.vertical-item-card .item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vertical-item-card .item-details {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.vertical-item-card .item-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+}
+
+.vertical-item-card .item-price {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.vertical-item-card .item-views,
+.vertical-item-card .item-favorites,
+.vertical-item-card .dual-price,
+.vertical-item-card .item-condition,
+.vertical-item-card .item-location {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+/* Horizontal Items Container */
+.horizontal-items-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 0 16px 16px 16px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-items-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Horizontal Item Card */
+.horizontal-item-card {
+    min-width: 150px;
+    width: 150px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.horizontal-item-card .item-image {
+    width: 100%;
+    height: 150px;
+}
+
+.horizontal-item-card .item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.horizontal-item-card .item-details {
+    padding: 8px;
+}
+
+.horizontal-item-card .item-name {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.horizontal-item-card .item-price {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.horizontal-item-card .item-location,
+.horizontal-item-card .item-mileage {
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive design */
+@media screen and (min-width: 768px) {
+    .vertical-items-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .horizontal-item-card {
+        min-width: 180px;
+        width: 180px;
+    }
+    
+    .horizontal-item-card .item-image {
+        height: 180px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .vertical-items-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .vertical-item-card .item-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .vertical-item-card .item-name {
+        font-size: 14px;
+    }
+    
+    .vertical-item-card .item-price {
+        font-size: 16px;
+    }
+    
+    .horizontal-item-card {
+        min-width: 130px;
+        width: 130px;
+    }
+    
+    .horizontal-item-card .item-image {
+        height: 130px;
+    }
+}
